@@ -1,0 +1,35 @@
+name: Atualizar IPTV
+on:
+  workflow_dispatch:
+    inputs:
+      check_streams:
+        description: Verificar streams
+        type: boolean
+        default: false
+  schedule:
+    - cron: '17 6 * * *'
+    - cron: '47 7 * * 0'
+permissions:
+  contents: write
+concurrency:
+  group: iptv
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gerar playlist
+        env:
+          CHECK_STREAMS: ${{ (github.event_name == 'schedule' && github.event.schedule == '47 7 * * 0') || inputs.check_streams || 'false' }}
+        run: python build.py
+      - name: Publicar
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add playlist.m3u channels.json report.json stream_status.json || true
+          git diff --cached --quiet || (git commit -m 'Atualizar canais' && git push)
