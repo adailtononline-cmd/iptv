@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'build.py'
+      - 'validate.py'
       - '.github/workflows/update.yml'
   workflow_dispatch:
     inputs:
@@ -33,6 +34,8 @@ jobs:
         env:
           CHECK_STREAMS: 'true'
         run: python build.py
+      - name: Validar integridade da playlist
+        run: python validate.py
       - name: Guardar diagnóstico mesmo em caso de falha
         if: always()
         uses: actions/upload-artifact@v4
