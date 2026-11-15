@@ -16,7 +16,7 @@ def check(url):
    body=r.read(1024)
    if b"<html" in body.lower():return "html"
    content_type=r.headers.get("Content-Type","").lower()
-   is_hls=bool(re.search(r"\\.m3u8(?:[?#]|$)",r.geturl(),re.I) or re.search(r"\\.m3u8(?:[?#]|$)",url,re.I) or "mpegurl" in content_type)
+   is_hls=bool(re.search(r"\.m3u8(?:[?#]|$)",r.geturl(),re.I) or re.search(r"\.m3u8(?:[?#]|$)",url,re.I) or "mpegurl" in content_type)
    if is_hls:
     manifest=body.decode("utf-8-sig",errors="replace").lstrip()
     if not (manifest.startswith("#EXTM3U") and "#EXT-X-" in manifest):return "invalid_hls"
