@@ -12,6 +12,9 @@ assert playlist and playlist[0] == "#EXTM3U", "Missing M3U header"
 assert len(playlist) == 1 + 2 * len(channels), "M3U/channel count mismatch"
 assert len(channels) == report["total"], "Report/channel count mismatch"
 assert len(channels) >= 100, "Unexpectedly small playlist"
+assert report.get("retained_after_deduplication") == len(channels), "Retained count mismatch"
+assert report.get("excluded_after_checks", -1) >= 0, "Invalid exclusion count"
+assert report.get("duplicate_candidates", -1) >= 0, "Invalid duplicate count"
 seen = set()
 for index, channel in enumerate(channels):
     country = channel["country"]
@@ -42,6 +45,8 @@ for index, channel in enumerate(channels):
 assert dict(Counter(x["country"] for x in channels)) == report["countries"], "Country counts mismatch"
 if report.get("weekly_http_test"):
     status = json.loads((root / "stream_status.json").read_text(encoding="utf-8"))
+    assert sum(report.get("test_results", {}).values()) == report.get("tested_streams"), "Test result totals mismatch"
+    assert report["tested_streams"] >= len(channels), "Fewer tests than published channels"
     assert all(x["url"] in status for x in channels), "Missing stream diagnostic"
     assert sum(status[x["url"]]["status"] == "ok" for x in channels) == report["http_positive_selected"], "Positive count mismatch"
 print(f"VALIDATED: {len(channels)} channels, {len(report['countries'])} countries, metadata and deduplication")
