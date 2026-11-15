@@ -33,6 +33,17 @@ jobs:
         env:
           CHECK_STREAMS: ${{ (github.event_name == 'schedule' && github.event.schedule == '47 7 * * 0') || inputs.check_streams || 'false' }}
         run: python build.py
+      - name: Guardar diagnóstico mesmo em caso de falha
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-iptv
+          path: |
+            report.json
+            channels.json
+            stream_status.json
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Publicar
         run: |
           git config user.name 'github-actions[bot]'
