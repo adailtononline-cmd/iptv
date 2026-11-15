@@ -29,14 +29,14 @@ def main():
  for line in lines:
   if line.startswith("#EXTINF:"):meta=line;continue
   if not meta or not line.startswith(("http://","https://")):continue
-  a=attrs(meta);cid=a.get("tvg-id","");ch=channels.get(cid,{})
-  if not a.get("tvg-logo") and logos.get(cid):a["tvg-logo"]=logos[cid]
-  country=ch.get("country") or "INT";langs=set(ch.get("languages") or [])
+  a=attrs(meta);cid=a.get("tvg-id","");base_id=cid.split("@")[0];ch=channels.get(base_id,{})
+  if not a.get("tvg-logo") and logos.get(base_id):a["tvg-logo"]=logos[cid]
+  country=(ch.get("country") or (re.search(r"\.([a-z]{2})$",base_id,re.I) or [None,"INT"])[1]).upper();langs=set(ch.get("languages") or [])
   if country not in selected and not LANG.intersection(langs):meta=None;continue
   cats=ch.get("categories") or []
   if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
   name=meta.split(",",1)[-1].strip()
-  key=(country,cid or name.casefold())
+  key=(country,base_id or re.sub(r"\\s*\\(\\d{3,4}p\\).*","",name).casefold())
   quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
   if key not in found or quality>found[key].get("quality",0):
    found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(cid) or "","quality":quality,"metadata":ch}
