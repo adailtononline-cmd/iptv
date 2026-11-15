@@ -51,13 +51,13 @@ def main():
    prev=state.get(x["url"],{})
    state[x["url"]]={"status":result,"failures":0 if result=="ok" else prev.get("failures",0)+1,"checked_at":now}
   items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] in ("403","401","429","network")]
- eligible={id(x) for x in items}
- items=[]
- for group in found.values():
-  options=[x for x in group if id(x) in eligible]
-  if not options:continue
-  options.sort(key=lambda x:(state.get(x["url"],{}).get("status")=="ok",x["quality"],x["url"].startswith("https://")),reverse=True)
-  items.append(options[0])
+  eligible={id(x) for x in items}
+  items=[]
+  for group in found.values():
+   options=[x for x in group if id(x) in eligible]
+   if not options:continue
+   options.sort(key=lambda x:(state.get(x["url"],{}).get("status")=="ok",x["quality"],x["url"].startswith("https://")),reverse=True)
+   items.append(options[0])
   (P/"stream_status.json").write_text(json.dumps(state,ensure_ascii=False))
  if not testing:
   items=[max(group,key=lambda x:(x["quality"],x["url"].startswith("https://"))) for group in found.values()]
