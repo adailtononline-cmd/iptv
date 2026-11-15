@@ -1,5 +1,9 @@
 name: Atualizar IPTV
 on:
+  push:
+    paths:
+      - 'build.py'
+      - '.github/workflows/update.yml'
   workflow_dispatch:
     inputs:
       check_streams:
