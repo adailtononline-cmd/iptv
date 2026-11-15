@@ -11,9 +11,9 @@ def fetch(path):
 def attrs(s):return dict(re.findall(r'([\w-]+)="([^"]*)"',s))
 def check(url):
  try:
-  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Range":"bytes=0-1023"})
+  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Range":"bytes=0-8191"})
   with urllib.request.urlopen(req,timeout=7) as r:
-   body=r.read(1024)
+   body=r.read(8192)
    if b"<html" in body.lower():return "html"
    content_type=r.headers.get("Content-Type","").lower()
    is_hls=bool(re.search(r"\.m3u8(?:[?#]|$)",r.geturl(),re.I) or re.search(r"\.m3u8(?:[?#]|$)",url,re.I) or "mpegurl" in content_type)
