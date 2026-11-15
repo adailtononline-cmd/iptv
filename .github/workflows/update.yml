@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validar sintaxe
+        run: python -m py_compile build.py
       - name: Gerar playlist
         env:
           CHECK_STREAMS: ${{ (github.event_name == 'schedule' && github.event.schedule == '47 7 * * 0') || inputs.check_streams || 'false' }}
@@ -35,5 +37,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add playlist.m3u channels.json report.json stream_status.json || true
+          git add playlist.m3u channels.json report.json
+          if [ -f stream_status.json ]; then git add stream_status.json; fi
           git diff --cached --quiet || (git commit -m 'Atualizar canais' && git push)
