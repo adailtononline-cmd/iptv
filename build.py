@@ -14,8 +14,9 @@ def check(url):
   req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Range":"bytes=0-8191"})
   with urllib.request.urlopen(req,timeout=7) as r:
    body=r.read(8192)
-   if b"<html" in body.lower():return "html"
    content_type=r.headers.get("Content-Type","").lower()
+   # HTML error/landing pages may not contain an <html> tag in the first bytes.
+   if "text/html" in content_type or "application/xhtml+xml" in content_type or re.search(rb"<(?:!doctype\s+html|html)(?:\s|>)",body[:2048],re.I):return "html"
    is_hls=bool(re.search(r"\.m3u8(?:[?#]|$)",r.geturl(),re.I) or re.search(r"\.m3u8(?:[?#]|$)",url,re.I) or "mpegurl" in content_type)
    if is_hls:
     manifest=body.decode("utf-8-sig",errors="replace").lstrip()
