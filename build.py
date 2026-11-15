@@ -50,7 +50,7 @@ def main():
   for x,result in zip(items,results):
    prev=state.get(x["url"],{})
    state[x["url"]]={"status":result,"failures":0 if result=="ok" else prev.get("failures",0)+1,"checked_at":now}
-  items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"]=="403"]
+  items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] in ("403","401","429","network")]
   (P/"stream_status.json").write_text(json.dumps(state,ensure_ascii=False))
  if len(items)<100:raise RuntimeError("Too few streams; refusing to replace playlist")
  items.sort(key=lambda x:(names.get(x["country"],x["country"]),x["category"],x["name"]))
@@ -65,6 +65,6 @@ def main():
   output.extend(['#EXTINF:-1 '+preserved+' group-title="'+group+'",'+x["name"],x["url"]])
  (P/"playlist.m3u").write_text("\n".join(output)+"\n")
  (P/"channels.json").write_text(json.dumps(items,ensure_ascii=False))
- (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing},ensure_ascii=False,indent=2))
+ (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing,"tested_streams":len(results) if testing else 0,"test_results":dict(Counter(results)) if testing else {}},ensure_ascii=False,indent=2))
  print("Generated",len(items),"channels")
 if __name__=="__main__":main()
