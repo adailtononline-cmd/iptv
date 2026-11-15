@@ -36,12 +36,12 @@ def main():
   cats=ch.get("categories") or []
   if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
   name=meta.split(",",1)[-1].strip()
-  key=(country,(base_id or re.sub(r"\s*\(\d{3,4}p\).*","",name)).casefold())
+  key=(country,re.sub(r"\s*\(\d{3,4}p\)","",name).strip().casefold())
   quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
-  if key not in found or quality>found[key].get("quality",0):
-   found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch}
+  found.setdefault(key,[]).append({"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch})
   meta=None
- items=list(found.values())
+ candidates=[x for group in found.values() for x in group]
+ items=candidates
  try:state=json.loads((P/"stream_status.json").read_text())
  except Exception:state={}
  testing=os.getenv("CHECK_STREAMS","false").lower()=="true"
@@ -51,7 +51,16 @@ def main():
    prev=state.get(x["url"],{})
    state[x["url"]]={"status":result,"failures":0 if result=="ok" else prev.get("failures",0)+1,"checked_at":now}
   items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] in ("403","401","429","network")]
+ eligible={id(x) for x in items}
+ items=[]
+ for group in found.values():
+  options=[x for x in group if id(x) in eligible]
+  if not options:continue
+  options.sort(key=lambda x:(state.get(x["url"],{}).get("status")=="ok",x["quality"],x["url"].startswith("https://")),reverse=True)
+  items.append(options[0])
   (P/"stream_status.json").write_text(json.dumps(state,ensure_ascii=False))
+ if not testing:
+  items=[max(group,key=lambda x:(x["quality"],x["url"].startswith("https://"))) for group in found.values()]
  if len(items)<100:raise RuntimeError("Too few streams; refusing to replace playlist")
  items.sort(key=lambda x:(names.get(x["country"],x["country"]),x["category"],x["name"]))
  output=["#EXTM3U"]
@@ -65,6 +74,6 @@ def main():
   output.extend(['#EXTINF:-1 '+preserved+' group-title="'+group+'",'+x["name"],x["url"]])
  (P/"playlist.m3u").write_text("\n".join(output)+"\n")
  (P/"channels.json").write_text(json.dumps(items,ensure_ascii=False))
- (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing,"tested_streams":len(results) if testing else 0,"test_results":dict(Counter(results)) if testing else {}},ensure_ascii=False,indent=2))
+ (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing,"tested_streams":len(results) if testing else 0,"duplicate_candidates":len(candidates)-len(found),"retained_after_deduplication":len(items),"test_results":dict(Counter(results)) if testing else {}},ensure_ascii=False,indent=2))
  print("Generated",len(items),"channels")
 if __name__=="__main__":main()
