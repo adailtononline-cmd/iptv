@@ -3,7 +3,7 @@ from collections import Counter
 from pathlib import Path
 P=Path(__file__).parent
 BASE="https://iptv-org.github.io"
-COUNTRIES=set("US CA GB FR PT BR CN JP AU IT TR".split())
+COUNTRIES=set("US CA UK FR PT BR CN JP AU IT TR".split())
 LANG={"por","spa"}
 def fetch(path):
  r=urllib.request.Request(BASE+path,headers={"User-Agent":"Mozilla/5.0"})
