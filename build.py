@@ -52,7 +52,7 @@ def main():
   for x,result in zip(items,results):
    prev=state.get(x["url"],{})
    state[x["url"]]={"status":result,"failures":0 if result=="ok" else prev.get("failures",0)+1,"checked_at":now}
-  items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] in ("403","401","429","network")]
+  items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] not in ("404","410","invalid_hls","html")]
   eligible={id(x) for x in items}
   items=[]
   for group in found.values():
