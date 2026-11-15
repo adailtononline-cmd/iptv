@@ -36,7 +36,7 @@ def main():
   cats=ch.get("categories") or []
   if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
   name=meta.split(",",1)[-1].strip()
-  key=(country,base_id or re.sub(r"\s*\(\d{3,4}p\).*","",name).casefold())
+  key=(country,(base_id or re.sub(r"\s*\(\d{3,4}p\).*","",name)).casefold())
   quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
   if key not in found or quality>found[key].get("quality",0):
    found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch}
@@ -57,6 +57,9 @@ def main():
  output=["#EXTM3U"]
  for x in items:
   a=x["attributes"]
+  if x["logo"]:a["tvg-logo"]=x["logo"]
+  if x["languages"]:a["tvg-language"]=",".join(x["languages"])
+  a["tvg-country"]=x["country"]
   preserved=" ".join(k+'="'+str(v).replace('"',"'")+'"' for k,v in a.items() if k!="group-title")
   group=(names.get(x["country"],x["country"])+" | "+x["category"]).replace('"',"'")
   output.extend(['#EXTINF:-1 '+preserved+' group-title="'+group+'",'+x["name"],x["url"]])
