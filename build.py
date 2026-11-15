@@ -3,7 +3,7 @@ from collections import Counter
 from pathlib import Path
 P=Path(__file__).parent
 BASE="https://iptv-org.github.io"
-COUNTRIES=set("US CA UK FR PT BR CN JP AU IT TR".split())
+COUNTRIES=set("US CA UK FR PT BR CN JP AU IT TR AR BO CL CO CR CU DO EC SV GQ GT HN MX NI PA PY PE ES UY VE AO CV GW MZ ST TL PR MO".split())
 LANG={"por","spa"}
 def fetch(path):
  r=urllib.request.Request(BASE+path,headers={"User-Agent":"Mozilla/5.0"})
@@ -23,7 +23,7 @@ def main():
  logos={x["channel"]:x.get("url","") for x in json.loads(fetch("/api/logos.json")) if x.get("channel")}
  countries=json.loads(fetch("/api/countries.json"))
  names={c["code"]:c["name"] for c in countries}
- selected={c["code"] for c in countries if c["code"] in COUNTRIES or LANG.intersection(c.get("languages") or [])}
+ selected=COUNTRIES | {c["code"] for c in countries if LANG.intersection(c.get("languages") or [])}
  lines=fetch("/iptv/index.m3u").splitlines()
  found={};meta=None
  for line in lines:
@@ -37,8 +37,9 @@ def main():
   if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
   name=meta.split(",",1)[-1].strip()
   key=(country,cid or name.casefold())
-  if key not in found:
-   found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(cid) or ""}
+  quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
+  if key not in found or quality>found[key].get("quality",0):
+   found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(cid) or "","quality":quality,"metadata":ch}
   meta=None
  items=list(found.values())
  try:state=json.loads((P/"stream_status.json").read_text())
