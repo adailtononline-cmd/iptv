@@ -51,7 +51,7 @@ def main():
   with concurrent.futures.ThreadPoolExecutor(max_workers=28) as pool:results=list(pool.map(check,[x["url"] for x in items]))
   for x,result in zip(items,results):
    prev=state.get(x["url"],{})
-   state[x["url"]]={"status":result,"failures":0 if result=="ok" else prev.get("failures",0)+1,"checked_at":now}
+   state[x["url"]]={"status":result,"failures":(prev.get("failures",0)+1 if result in ("404","410","invalid_hls","html") and prev.get("status")==result else 1 if result in ("404","410","invalid_hls","html") else 0),"checked_at":now}
   items=[x for x in items if state[x["url"]]["failures"]<2 or state[x["url"]]["status"] not in ("404","410","invalid_hls","html")]
   eligible={id(x) for x in items}
   items=[]
