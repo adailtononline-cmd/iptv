@@ -25,6 +25,16 @@ for index, channel in enumerate(channels):
     assert playlist[2 * index + 2] == url, f"URL mismatch at {index}"
     assert f'tvg-country="{country}"' in playlist[2 * index + 1], f"Missing country at {index}"
     assert 'group-title="' in playlist[2 * index + 1], f"Missing group at {index}"
+    extinf = playlist[2 * index + 1]
+    assert f'tvg-id="{channel["id"]}"' in extinf, f"TVG ID mismatch at {index}"
+    expected_group = channel["category"]
+    assert f' | {expected_group}"' in extinf, f"Category mismatch at {index}"
+    if channel.get("logo"):
+        assert f'tvg-logo="{channel["logo"]}"' in extinf, f"Logo mismatch at {index}"
+    if channel.get("languages"):
+        expected_languages = ",".join(channel["languages"])
+        assert f'tvg-language="{expected_languages}"' in extinf, f"Language mismatch at {index}"
+
     metadata = channel.get("metadata") or {}
     cats = metadata.get("categories") or []
     assert not metadata.get("is_nsfw"), f"NSFW channel: {name}"
