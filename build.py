@@ -8,7 +8,7 @@ LANG={"por","spa"}
 def fetch(path):
  r=urllib.request.Request(BASE+path,headers={"User-Agent":"Mozilla/5.0"})
  return urllib.request.urlopen(r,timeout=60).read().decode("utf-8-sig")
-def attrs(s):return dict(re.findall(r'([\\w-]+)="([^"]*)"',s))
+def attrs(s):return dict(re.findall(r'([\w-]+)="([^"]*)"',s))
 def check(url):
  try:
   req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Range":"bytes=0-1023"})
@@ -20,6 +20,7 @@ def check(url):
 def main():
  now=datetime.datetime.now(datetime.timezone.utc).isoformat()
  channels={c["id"]:c for c in json.loads(fetch("/api/channels.json")) if c.get("id")}
+ logos={x["channel"]:x.get("url","") for x in json.loads(fetch("/api/logos.json")) if x.get("channel")}
  countries=json.loads(fetch("/api/countries.json"))
  names={c["code"]:c["name"] for c in countries}
  selected={c["code"] for c in countries if c["code"] in COUNTRIES or LANG.intersection(c.get("languages") or [])}
@@ -29,6 +30,7 @@ def main():
   if line.startswith("#EXTINF:"):meta=line;continue
   if not meta or not line.startswith(("http://","https://")):continue
   a=attrs(meta);cid=a.get("tvg-id","");ch=channels.get(cid,{})
+  if not a.get("tvg-logo") and logos.get(cid):a["tvg-logo"]=logos[cid]
   country=ch.get("country") or "INT";langs=set(ch.get("languages") or [])
   if country not in selected and not LANG.intersection(langs):meta=None;continue
   cats=ch.get("categories") or []
@@ -36,7 +38,7 @@ def main():
   name=meta.split(",",1)[-1].strip()
   key=(country,cid or name.casefold())
   if key not in found:
-   found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or ch.get("logo") or ""}
+   found[key]={"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(cid) or ""}
   meta=None
  items=list(found.values())
  try:state=json.loads((P/"stream_status.json").read_text())
