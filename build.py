@@ -31,22 +31,29 @@ def main():
  countries=json.loads(fetch("/api/countries.json"))
  names={c["code"]:c["name"] for c in countries}
  selected=COUNTRIES | {c["code"] for c in countries if LANG.intersection(c.get("languages") or [])}
- lines=fetch("/iptv/index.m3u").splitlines()
- found={};meta=None
- for line in lines:
-  if line.startswith("#EXTINF:"):meta=line;continue
-  if not meta or not line.startswith(("http://","https://")):continue
-  a=attrs(meta);cid=a.get("tvg-id","");base_id=cid.split("@")[0];ch=channels.get(base_id,{})
-  if not a.get("tvg-logo") and logos.get(base_id):a["tvg-logo"]=logos[base_id]
-  country=(ch.get("country") or (re.search(r"\.([a-z]{2})$",base_id,re.I) or [None,"INT"])[1]).upper();langs=set(ch.get("languages") or [])
-  if country not in selected and not LANG.intersection(langs):meta=None;continue
-  cats=ch.get("categories") or []
-  if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
-  name=meta.split(",",1)[-1].strip()
-  key=(country,re.sub(r"\s*\(\d{3,4}p\)","",name).strip().casefold())
-  quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
-  found.setdefault(key,[]).append({"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch})
+ # Import the global index and the dedicated Brazilian country feed: the latter
+ # can expose BR streams not present in the global index at a given update.
+ sources=[("INT",fetch("/iptv/index.m3u").splitlines())]
+ sources.append(("BR",fetch("/iptv/countries/br.m3u").splitlines()))
+ found={};seen_urls=set();meta=None
+ for source_country,lines in sources:
   meta=None
+  for line in lines:
+   if line.startswith("#EXTINF:"):meta=line;continue
+   if not meta or not line.startswith(("http://","https://")):continue
+   a=attrs(meta);cid=a.get("tvg-id","");base_id=cid.split("@")[0];ch=channels.get(base_id,{})
+   if not a.get("tvg-logo") and logos.get(base_id):a["tvg-logo"]=logos[base_id]
+   country=(ch.get("country") or (re.search(r"\.([a-z]{2})$",base_id,re.I) or [None,source_country])[1]).upper();langs=set(ch.get("languages") or [])
+   if country not in selected and not LANG.intersection(langs):meta=None;continue
+   cats=ch.get("categories") or []
+   if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
+   name=meta.split(",",1)[-1].strip()
+   key=(country,re.sub(r"\s*\(\d{3,4}p\)","",name).strip().casefold())
+   quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
+   if (country,line) in seen_urls:meta=None;continue
+   seen_urls.add((country,line))
+   found.setdefault(key,[]).append({"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch})
+   meta=None
  candidates=[x for group in found.values() for x in group]
  items=candidates
  try:state=json.loads((P/"stream_status.json").read_text())
