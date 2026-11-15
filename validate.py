@@ -15,6 +15,10 @@ assert len(channels) >= 100, "Unexpectedly small playlist"
 assert report.get("retained_after_deduplication") == len(channels), "Retained count mismatch"
 assert report.get("excluded_after_checks", -1) >= 0, "Invalid exclusion count"
 assert report.get("duplicate_candidates", -1) >= 0, "Invalid duplicate count"
+required_countries = set("US CA UK FR PT BR CN JP AU IT TR".split())
+missing_countries = required_countries - set(report["countries"])
+assert not missing_countries, f"Missing required countries: {sorted(missing_countries)}"
+assert report["excluded_after_checks"] + report["total"] >= report["total"], "Invalid totals"
 seen = set()
 for index, channel in enumerate(channels):
     country = channel["country"]
@@ -48,5 +52,7 @@ if report.get("weekly_http_test"):
     assert sum(report.get("test_results", {}).values()) == report.get("tested_streams"), "Test result totals mismatch"
     assert report["tested_streams"] >= len(channels), "Fewer tests than published channels"
     assert all(x["url"] in status for x in channels), "Missing stream diagnostic"
+    confirmed_dead = {"404", "410", "invalid_hls", "html"}
+    assert not any(status[x["url"]].get("failures", 0) >= 2 and status[x["url"]].get("status") in confirmed_dead for x in channels), "Confirmed dead stream retained"
     assert sum(status[x["url"]]["status"] == "ok" for x in channels) == report["http_positive_selected"], "Positive count mismatch"
 print(f"VALIDATED: {len(channels)} channels, {len(report['countries'])} countries, metadata and deduplication")
