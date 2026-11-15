@@ -15,7 +15,11 @@ def check(url):
   with urllib.request.urlopen(req,timeout=7) as r:
    body=r.read(1024)
    if b"<html" in body.lower():return "html"
-   if re.search(r"\.m3u8(?:\?|$)",url,re.I) and not (body.lstrip().startswith(b"#EXTM3U") and b"#EXT-X-" in body):return "invalid_hls"
+   content_type=r.headers.get("Content-Type","").lower()
+   is_hls=bool(re.search(r"\\.m3u8(?:[?#]|$)",r.geturl(),re.I) or re.search(r"\\.m3u8(?:[?#]|$)",url,re.I) or "mpegurl" in content_type)
+   if is_hls:
+    manifest=body.decode("utf-8-sig",errors="replace").lstrip()
+    if not (manifest.startswith("#EXTM3U") and "#EXT-X-" in manifest):return "invalid_hls"
    return "ok"
  except urllib.error.HTTPError as e:return str(e.code)
  except Exception:return "network"
