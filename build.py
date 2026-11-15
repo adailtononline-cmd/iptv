@@ -35,21 +35,38 @@ def main():
  # can expose BR streams not present in the global index at a given update.
  sources=[("INT",fetch("/iptv/index.m3u").splitlines())]
  sources.append(("BR",fetch("/iptv/countries/br.m3u").splitlines()))
+ # Independent, explicitly free-to-air Brazilian source. Its archived status
+ # means entries must pass the same live checks as the primary catalog.
+ try:
+  req=urllib.request.Request("https://raw.githubusercontent.com/joaoguidugli/FTA-IPTV-Brasil/master/playlist.m3u8",headers={"User-Agent":"Mozilla/5.0"})
+  with urllib.request.urlopen(req,timeout=30) as response:
+   sources.append(("BR",response.read().decode("utf-8-sig").splitlines()))
+ except Exception as exc:
+  print("Optional Brazilian FTA source unavailable:",exc)
  found={};seen_urls=set();meta=None
  for source_country,lines in sources:
   meta=None
   for line in lines:
    if line.startswith("#EXTINF:"):meta=line;continue
    if not meta or not line.startswith(("http://","https://")):continue
-   a=attrs(meta);cid=a.get("tvg-id","");base_id=cid.split("@")[0];ch=channels.get(base_id,{})
+   # Web pages are not directly playable IPTV streams.
+   if re.search(r"^(?:https?://)?(?:www\\.)?(?:youtube\\.com|youtu\\.be)/",line,re.I):meta=None;continue
+   a=attrs(meta);cid=a.get("tvg-id","")
+   cid=re.sub(r"\\(m3u4u\\)$","",cid,flags=re.I)
+   base_id=cid.split("@")[0];ch=channels.get(base_id,{})
    if not a.get("tvg-logo") and logos.get(base_id):a["tvg-logo"]=logos[base_id]
-   country=(ch.get("country") or (re.search(r"\.([a-z]{2})$",base_id,re.I) or [None,source_country])[1]).upper();langs=set(ch.get("languages") or [])
+   country=(ch.get("country") or (re.search(r"\\.([a-z]{2})$",base_id,re.I) or [None,source_country])[1]).upper();langs=set(ch.get("languages") or [])
+   if source_country=="BR" and not ch.get("country"):country="BR"
+   if source_country=="BR" and not langs:langs={"por"}
+   if not cid and source_country=="BR":
+    cid=re.sub(r"[^a-zA-Z0-9]+","",a.get("tvg-name") or meta.split(",",1)[-1])+".br"
    if country not in selected and not LANG.intersection(langs):meta=None;continue
    cats=ch.get("categories") or []
    if ch.get("is_nsfw") or any(c.lower() in ("xxx","adult","porn","pornography","erotic") for c in cats):meta=None;continue
    name=meta.split(",",1)[-1].strip()
    key=(country,re.sub(r"\s*\(\d{3,4}p\)","",name).strip().casefold())
    quality=int((re.search(r"\((\d{3,4})p\)",name) or [None,"0"])[1])
+   # Never import a page URL or a source's unsupported scheme as a stream.
    if (country,line) in seen_urls:meta=None;continue
    seen_urls.add((country,line))
    found.setdefault(key,[]).append({"name":name,"id":cid,"country":country,"category":cats[0] if cats else a.get("group-title","General"),"url":line,"attributes":a,"languages":sorted(langs),"logo":a.get("tvg-logo") or logos.get(base_id) or "","quality":quality,"metadata":ch})
