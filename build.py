@@ -14,7 +14,9 @@ def check(url):
   req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Range":"bytes=0-1023"})
   with urllib.request.urlopen(req,timeout=7) as r:
    body=r.read(1024)
-   return "html" if b"<html" in body.lower() else "ok"
+   if b"<html" in body.lower():return "html"
+   if re.search(r"\.m3u8(?:\?|$)",url,re.I) and not (body.lstrip().startswith(b"#EXTM3U") and b"#EXT-X-" in body):return "invalid_hls"
+   return "ok"
  except urllib.error.HTTPError as e:return str(e.code)
  except Exception:return "network"
 def main():
@@ -74,6 +76,6 @@ def main():
   output.extend(['#EXTINF:-1 '+preserved+' group-title="'+group+'",'+x["name"],x["url"]])
  (P/"playlist.m3u").write_text("\n".join(output)+"\n")
  (P/"channels.json").write_text(json.dumps(items,ensure_ascii=False))
- (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing,"tested_streams":len(results) if testing else 0,"duplicate_candidates":len(candidates)-len(found),"retained_after_deduplication":len(items),"test_results":dict(Counter(results)) if testing else {}},ensure_ascii=False,indent=2))
+ (P/"report.json").write_text(json.dumps({"updated_at":now,"total":len(items),"countries":dict(Counter(x["country"] for x in items)),"weekly_http_test":testing,"tested_streams":len(results) if testing else 0,"duplicate_candidates":len(candidates)-len(found),"excluded_after_checks":len(found)-len(items),"http_positive_selected":sum(state.get(x["url"],{}).get("status")=="ok" for x in items) if testing else None,"retained_after_deduplication":len(items),"test_results":dict(Counter(results)) if testing else {}},ensure_ascii=False,indent=2))
  print("Generated",len(items),"channels")
 if __name__=="__main__":main()
