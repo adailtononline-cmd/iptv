@@ -31,7 +31,7 @@ jobs:
         run: python -m py_compile build.py
       - name: Gerar playlist
         env:
-          CHECK_STREAMS: ${{ (github.event_name == 'schedule' && github.event.schedule == '47 7 * * 0') || inputs.check_streams || 'false' }}
+          CHECK_STREAMS: ${{ github.event_name == 'push' || (github.event_name == 'schedule' && github.event.schedule == '47 7 * * 0') || inputs.check_streams || 'false' }}
         run: python build.py
       - name: Guardar diagnóstico mesmo em caso de falha
         if: always()
