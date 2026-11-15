@@ -17,7 +17,7 @@ for index, channel in enumerate(channels):
     country = channel["country"]
     name = channel["name"]
     url = channel["url"]
-    key = (country, re.sub(r"\\s*\\(\\d{3,4}p\\)", "", name).strip().casefold())
+    key = (country, re.sub(r"\s*\(\d{3,4}p\)", "", name).strip().casefold())
     assert key not in seen, f"Duplicate country/name: {key}"
     seen.add(key)
     assert url.startswith(("http://", "https://")), f"Invalid URL: {url}"
