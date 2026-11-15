@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'build.py'
+      - 'refresh-now.txt'
       - 'validate.py'
       - '.github/workflows/update.yml'
   workflow_dispatch:
