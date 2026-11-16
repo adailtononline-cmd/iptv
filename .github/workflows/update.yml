@@ -1,57 +1,35 @@
-name: Atualizar IPTV
+name: Atualizar IPTV Mundi
 on:
   push:
     paths:
-      - 'build.py'
-      - 'refresh-now.txt'
-      - 'validate.py'
+      - 'dados/canais.json'
+      - 'exportar.py'
       - '.github/workflows/update.yml'
   workflow_dispatch:
-    inputs:
-      check_streams:
-        description: Verificar streams
-        type: boolean
-        default: false
   schedule:
-    - cron: '17 6 * * *'
-    - cron: '47 7 * * 0'
+    - cron: '23 8 * * 1'
 permissions:
   contents: write
 concurrency:
   group: iptv
   cancel-in-progress: false
 jobs:
-  build:
+  gerar:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Validar sintaxe
-        run: python -m py_compile build.py
-      - name: Gerar playlist
+        with: { python-version: '3.12' }
+      - run: pip install pillow
+      - run: sudo apt-get install -y fonts-dejavu-core >/dev/null
+      - name: Gerar lista, logos e guia a partir de dados/canais.json
         env:
-          CHECK_STREAMS: 'true'
-        run: python build.py
-      - name: Validar integridade da playlist
-        run: python validate.py
-      - name: Guardar diagnóstico mesmo em caso de falha
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: diagnostico-iptv
-          path: |
-            report.json
-            channels.json
-            stream_status.json
-          if-no-files-found: ignore
-          retention-days: 7
+          BASE_URL: ${{ vars.BASE_URL }}
+        run: python exportar.py
       - name: Publicar
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add playlist.m3u channels.json report.json
-          if [ -f stream_status.json ]; then git add stream_status.json; fi
-          git diff --cached --quiet || (git commit -m 'Atualizar canais' && git push)
+          git add -A playlist.m3u epg.xml.gz report.json logos
+          git diff --cached --quiet || (git commit -m 'Atualizar lista' && git pull --rebase -X theirs origin main && git push)
