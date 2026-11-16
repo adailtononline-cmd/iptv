@@ -1,21 +1,21 @@
 {
- "atualizado": "2026-11-16T02:06:16.488696+00:00",
+ "atualizado": "2026-11-16T02:13:14.373948+00:00",
  "canais": 7838,
  "paises": 174,
  "sem_pais": 846,
- "com_logo_original": 7046,
- "logo_gerado": 792,
- "com_id_de_guia": 6563,
- "canais_com_guia": 1280,
- "so_em_algumas_regioes": 693,
+ "com_logo_original": 7045,
+ "logo_gerado": 793,
+ "com_id_de_guia": 6624,
+ "canais_com_guia": 1299,
+ "so_em_algumas_regioes": 732,
  "guia_por_fonte": {
   "all.xml": {
-   "channels": 129,
-   "programmes": 3580
+   "channels": 130,
+   "programmes": 3623
   },
   "epg_ripper_UK1.xml.gz": {
    "channels": 56,
-   "programmes": 6426
+   "programmes": 6425
   },
   "epg_ripper_US2.xml.gz": {
    "channels": 87,
@@ -35,15 +35,15 @@
   },
   "epg_ripper_AU1.xml.gz": {
    "channels": 27,
-   "programmes": 5054
+   "programmes": 5050
   },
   "epg_ripper_NZ1.xml.gz": {
    "channels": 5,
    "programmes": 904
   },
   "epg_ripper_ES1.xml.gz": {
-   "channels": 37,
-   "programmes": 4493
+   "channels": 39,
+   "programmes": 4881
   },
   "epg_ripper_BR1.xml.gz": {
    "channels": 0,
@@ -54,12 +54,12 @@
    "programmes": 3114
   },
   "epg_ripper_IT1.xml.gz": {
-   "channels": 31,
-   "programmes": 3935
+   "channels": 32,
+   "programmes": 4053
   },
   "epg_ripper_FR1.xml.gz": {
    "channels": 68,
-   "programmes": 6654
+   "programmes": 6653
   },
   "epg_ripper_DE1.xml.gz": {
    "channels": 42,
@@ -91,31 +91,31 @@
   },
   "epg_ripper_TR1.xml.gz": {
    "channels": 16,
-   "programmes": 1452
+   "programmes": 1451
   },
   "epg_ripper_NL1.xml.gz": {
-   "channels": 12,
-   "programmes": 2174
+   "channels": 16,
+   "programmes": 3324
   },
   "epg_ripper_PL1.xml.gz": {
-   "channels": 61,
-   "programmes": 13789
+   "channels": 62,
+   "programmes": 13836
   },
   "epg_ripper_RO1.xml.gz": {
-   "channels": 67,
-   "programmes": 7460
+   "channels": 69,
+   "programmes": 7595
   },
   "epg_ripper_HU1.xml.gz": {
-   "channels": 28,
-   "programmes": 2926
+   "channels": 30,
+   "programmes": 3070
   },
   "epg_ripper_CZ1.xml.gz": {
-   "channels": 91,
-   "programmes": 5573
+   "channels": 93,
+   "programmes": 5580
   },
   "epg_ripper_GR1.xml.gz": {
-   "channels": 23,
-   "programmes": 1827
+   "channels": 25,
+   "programmes": 2043
   },
   "epg_ripper_IN1.xml.gz": {
    "channels": 282,
