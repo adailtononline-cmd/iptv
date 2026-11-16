@@ -1,29 +1,29 @@
 {
- "atualizado": "2026-11-16T03:05:40.534891+00:00",
+ "atualizado": "2026-11-16T18:40:57.487075+00:00",
  "canais": 7985,
  "paises": 174,
  "sem_pais": 846,
- "com_logo_original": 6826,
- "logo_gerado": 1159,
+ "com_logo_original": 6829,
+ "logo_gerado": 1156,
  "com_id_de_guia": 6723,
  "canais_com_guia": 1316,
  "so_em_algumas_regioes": 852,
  "guia_por_fonte": {
   "all.xml": {
    "channels": 130,
-   "programmes": 3623
+   "programmes": 3614
   },
   "epg_ripper_UK1.xml.gz": {
    "channels": 56,
-   "programmes": 6582
+   "programmes": 5546
   },
   "epg_ripper_US2.xml.gz": {
    "channels": 88,
-   "programmes": 16057
+   "programmes": 13900
   },
   "epg_ripper_US_LOCALS1.xml.gz": {
    "channels": 2,
-   "programmes": 207
+   "programmes": 177
   },
   "epg_ripper_US_SPORTS1.xml.gz": {
    "channels": 0,
@@ -31,19 +31,19 @@
   },
   "epg_ripper_CA2.xml.gz": {
    "channels": 25,
-   "programmes": 4250
+   "programmes": 4271
   },
   "epg_ripper_AU1.xml.gz": {
    "channels": 27,
-   "programmes": 5012
+   "programmes": 5696
   },
   "epg_ripper_NZ1.xml.gz": {
    "channels": 5,
-   "programmes": 903
+   "programmes": 915
   },
   "epg_ripper_ES1.xml.gz": {
    "channels": 37,
-   "programmes": 4532
+   "programmes": 3733
   },
   "epg_ripper_BR1.xml.gz": {
    "channels": 0,
@@ -55,23 +55,23 @@
   },
   "epg_ripper_IT1.xml.gz": {
    "channels": 33,
-   "programmes": 4661
+   "programmes": 3882
   },
   "epg_ripper_FR1.xml.gz": {
    "channels": 68,
-   "programmes": 6707
+   "programmes": 7185
   },
   "epg_ripper_DE1.xml.gz": {
    "channels": 42,
-   "programmes": 5240
+   "programmes": 5562
   },
   "epg_ripper_MX1.xml.gz": {
    "channels": 2,
-   "programmes": 189
+   "programmes": 168
   },
   "epg_ripper_AR1.xml.gz": {
    "channels": 3,
-   "programmes": 482
+   "programmes": 394
   },
   "epg_ripper_CL1.xml.gz": {
    "channels": 0,
@@ -79,47 +79,47 @@
   },
   "epg_ripper_CO1.xml.gz": {
    "channels": 19,
-   "programmes": 1268
+   "programmes": 1266
   },
   "epg_ripper_PE1.xml.gz": {
    "channels": 10,
-   "programmes": 191
+   "programmes": 212
   },
   "epg_ripper_PT1.xml.gz": {
    "channels": 10,
-   "programmes": 629
+   "programmes": 528
   },
   "epg_ripper_TR1.xml.gz": {
    "channels": 17,
-   "programmes": 1427
+   "programmes": 1478
   },
   "epg_ripper_NL1.xml.gz": {
    "channels": 15,
-   "programmes": 2987
+   "programmes": 3020
   },
   "epg_ripper_PL1.xml.gz": {
    "channels": 61,
-   "programmes": 13958
+   "programmes": 13842
   },
   "epg_ripper_RO1.xml.gz": {
    "channels": 72,
-   "programmes": 7827
+   "programmes": 6568
   },
   "epg_ripper_HU1.xml.gz": {
    "channels": 28,
-   "programmes": 2971
+   "programmes": 3006
   },
   "epg_ripper_CZ1.xml.gz": {
    "channels": 96,
-   "programmes": 5799
+   "programmes": 4834
   },
   "epg_ripper_GR1.xml.gz": {
    "channels": 23,
-   "programmes": 1886
+   "programmes": 1958
   },
   "epg_ripper_IN1.xml.gz": {
    "channels": 283,
-   "programmes": 39366
+   "programmes": 40359
   },
   "epg_ripper_RU1.xml.gz": {
    "error": "HTTP Error 404: Not Found"
