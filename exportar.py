@@ -7,7 +7,7 @@ from collections import Counter
 from datetime import datetime, timezone
 
 UA = "Mozilla/5.0"
-BASE_URL = os.environ.get("BASE_URL", "https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/").rstrip("/") + "/"
+BASE_URL = (os.environ.get("BASE_URL") or "https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/").rstrip("/") + "/"
 RAW_BASE = BASE_URL
 EXCLUIR = set()
 PRIORIDADE = ["BR"]
