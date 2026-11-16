@@ -167,6 +167,11 @@ def build_epg(results, now):
     return matched, out_channels, out_programmes, per_source
 
 
+def pluto_icons():
+    text = pluto_bytes().decode("utf-8", "ignore")
+    return {m.group(1): m.group(2) for m in re.finditer(r'<channel id="([0-9a-f]+)">.*?<icon src="([^"]+)"', text, re.S)}
+
+
 def fetch_json(url):
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
@@ -183,20 +188,39 @@ def _encolher(slug):
 
 
 def baixar_logo(job):
-    slug, url = job
+    slug, urls = job
     if os.path.exists("logos/" + slug + ".png"):
         return slug, True
-    try:
-        from PIL import Image
-        req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=12) as r:
-            raw = r.read(3_000_000)
-        img = Image.open(io.BytesIO(raw)); img.load()
-        img = img.convert("RGBA"); img.thumbnail((160, 160))
-        img.save("logos/" + slug + ".png", optimize=True)
-        return slug, True
-    except Exception:
-        return slug, False
+    from PIL import Image
+    for url in urls:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=12) as r:
+                raw = r.read(3_000_000)
+            if raw.lstrip()[:5].lower() in (b"<?xml", b"<svg ") or b"<svg" in raw[:300].lower():
+                continue                      # SVG: o Pillow não abre, tenta a próxima origem
+            img = Image.open(io.BytesIO(raw)); img.load()
+            img = img.convert("RGBA"); img.thumbnail((160, 160))
+            img.save("logos/" + slug + ".png", optimize=True)
+            return slug, True
+        except Exception:
+            continue
+    return slug, False
+
+
+def tvlogos_index():
+    """Logos do projeto tv-logo/tv-logos, por pasta de país + nome normalizado (igualdade exata)."""
+    data = fetch_json("https://api.github.com/repos/tv-logo/tv-logos/git/trees/main?recursive=1")
+    index = {}
+    for node in (data.get("tree", []) if isinstance(data, dict) else []):
+        m = re.match(r"countries/([^/]+)/([^/]+)\.png$", node.get("path", ""))
+        if not m:
+            continue
+        folder, stem = m.groups()
+        stem = re.sub(r"-(us|ca|au|nz|br|uk|gb|[a-z]{2})$", "", stem)
+        stem = re.sub(r"-(hd|sd|4k)$", "", stem)
+        index.setdefault((folder, norm(stem.replace("-", " "))), "https://raw.githubusercontent.com/tv-logo/tv-logos/main/" + node["path"].replace(" ", "%20"))
+    return index
 
 
 def main():
@@ -221,15 +245,36 @@ def main():
 
     for c in canais:
         c["slug"] = hashlib.md5(((c.get("p") or "") + "|" + c["n"]).encode()).hexdigest()[:12]
-    jobs = {c["slug"]: c["l"] for c in canais if c.get("l")}
+    # quadros gerados em rodadas anteriores são refeitos: a cada rodada tenta de novo achar o logo de verdade
+    if os.path.exists("logos_geradas.json"):
+        for sl in json.load(open("logos_geradas.json")):
+            if os.path.exists("logos/" + sl + ".png"):
+                os.remove("logos/" + sl + ".png")
+    catalogo = {}
+    for lg in fetch_json("https://iptv-org.github.io/api/logos.json"):
+        if lg.get("channel") and lg.get("url", "").startswith("https://"):
+            catalogo.setdefault(lg["channel"], []).append((0 if lg.get("in_use") else 1, lg["url"]))
+    tvl = tvlogos_index()
+    icones = pluto_icons()
+    jobs = {}
+    for c in canais:
+        origens = [c["l"]] if c.get("l") else []
+        base = ids.get(c["u"], "").split("@")[0]
+        origens += [u for _, u in sorted(catalogo.get(base, []))]
+        pid = pluto_id(c["u"])
+        if icones.get(pid): origens.append(icones[pid])
+        u = tvl.get((re.sub(r"[^a-z0-9]+", "-", (c.get("pn") or "").lower()).strip("-"), norm(plain_title(c["n"]))))
+        if u: origens.append(u)
+        if origens: jobs[c["slug"]] = list(dict.fromkeys(origens))
     with concurrent.futures.ThreadPoolExecutor(32) as pool:
         ok = dict(pool.map(baixar_logo, jobs.items()))
-    sem_logo = 0
+    sem_logo, geradas = 0, []
     for c in canais:
         if ok.get(c["slug"]) or os.path.exists("logos/" + c["slug"] + ".png") and c.get("l"):
             c["logo"] = BASE_URL + "logos/" + c["slug"] + ".png"
         else:
-            placeholder_logo(c["n"], c["slug"]); _encolher(c["slug"]); c["logo"] = BASE_URL + "logos/" + c["slug"] + ".png"; sem_logo += 1
+            placeholder_logo(c["n"], c["slug"]); _encolher(c["slug"]); geradas.append(c["slug"]); c["logo"] = BASE_URL + "logos/" + c["slug"] + ".png"; sem_logo += 1
+    json.dump(sorted(geradas), open("logos_geradas.json", "w"))
     usados = {c["slug"] for c in canais}
     for f in os.listdir("logos"):
         if f[:-4] not in usados:
