@@ -284,14 +284,16 @@ def main():
         return c["pn"] if c.get("p") else "Sem país identificado"
     def chave(c):
         cod = c.get("p") or ""
-        return (0 if cod in PRIORIDADE else (2 if not cod else 1), PRIORIDADE.index(cod) if cod in PRIORIDADE else 0, pais(c).lower(), 0 if c.get("o") else 1, c["n"].lower())
+        return (0 if cod in PRIORIDADE else (2 if not cod else 1), PRIORIDADE.index(cod) if cod in PRIORIDADE else 0, pais(c).lower(), c.get("pp", 9999), 0 if c.get("o") else 1, c["n"].lower())
     canais.sort(key=chave)
 
     linhas, results = [], []
     for c in canais:
         tid = ids.get(c["u"], "")
         nome = c["n"] + (" (" + c["q"] + ")" if c.get("q") and c["q"] not in c["n"] else "")
-        if c.get("r"):
+        if c.get("nv"):
+            nome += " [não testado]"
+        elif c.get("r"):
             nome += " [testado só em: " + ", ".join(c["r"]) + "]"
         a = ['tvg-id="%s"' % tid] if tid else []
         a += ['tvg-name="%s"' % c["n"].replace('"', ""), 'tvg-logo="%s"' % c["logo"]]
