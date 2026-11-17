@@ -47,6 +47,8 @@ https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8
 https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8
 #EXTINF:-1 tvg-id="GloboNews.br@SD" tvg-name="GloboNews" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f11d6affb1d4.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",GloboNews (1080p)
 http://79.127.238.228:14093
+#EXTINF:-1 tvg-name="CazeTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/9b4c451cf5ec.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Sports" group-title="Brazil",CazeTV (1080p) [testado só em: BR]
+http://138.204.86.4:8080/CAZE_TV/playlist.m3u8
 #EXTINF:-1 tvg-id="CNNBrasil.br@SD" tvg-name="CNN Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f04ffa061dac.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",CNN Brasil (1080p)
 https://d25usgadhphvwi.cloudfront.net/hls/main.m3u8
 #EXTINF:-1 tvg-id="RecordNews.br@SD" tvg-name="Record News" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ba147b0807d0.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",Record News (1080p)
@@ -105,6 +107,8 @@ http://170.83.16.50/AXN/index.m3u8
 http://170.83.16.50/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 tvg-id="SonyMovies.br@SD" tvg-name="Sony Movies" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/047b37de1b39.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Movies" group-title="Brazil",Sony Movies (720p)
 http://170.83.16.50/SONY_MOVIES/index.m3u8
+#EXTINF:-1 tvg-name="Sony One Shark Tank Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f9cdc71b86c7.png" tvg-country="BR" group-title="Brazil",Sony One Shark Tank Brasil (720p) [não testado]
+https://jmp2.uk/plu-6647c0b91050b60008390de4.m3u8
 #EXTINF:-1 tvg-id="NickOnline.br@HD" tvg-name="NickOnline" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a42b0d4fff27.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Kids" group-title="Brazil",NickOnline (720p) [não testado]
 https://x1colegal.com/hls/stream.m3u8
 #EXTINF:-1 tvg-id="BandSports.br@SD" tvg-name="Band Sports" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/51b4f4322e65.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Sports" group-title="Brazil",Band Sports (720p)
@@ -150,15 +154,21 @@ https://cpbr.appflux.com.br:2000/hls/1001noites/1001noites.m3u8
 #EXTINF:-1 tvg-id="AdessoTV.br@SD" tvg-name="Adesso TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a7844dcee690.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Adesso TV (720p) [testado só em: BR]
 #EXTVLCOPT:http-user-agent=VLC/3.0.20 LibVLC/3.0.20
 https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8
+#EXTINF:-1 tvg-id="AgroBrasilTV.br@SD" tvg-name="AgroBrasil TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/e9cc68ca6386.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Outdoor" group-title="Brazil",AgroBrasil TV (720p) [não testado]
+https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8
 #EXTINF:-1 tvg-id="AgroCanal.br@SD" tvg-name="AgroCanal" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/26fafdae214f.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",AgroCanal (1080p)
 #EXTVLCOPT:http-user-agent=VLC/3.0.20 LibVLC/3.0.20
 http://170.83.49.66:8083/AGROCANALHD/index.m3u8
 #EXTINF:-1 tvg-id="AgroMais.br@SD" tvg-name="AgroMais" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0f657b46c856.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",AgroMais (720p)
 http://170.83.16.50/AGRO_MAIS/index.m3u8
+#EXTINF:-1 tvg-id="AlphaChannel.br@SD" tvg-name="Alpha Channel" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/10d1ba7f751b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Alpha Channel (720p) [não testado]
+https://5b01a3d32b65c.streamlock.net:1936/tvalpha/tvalpha/playlist.m3u8
 #EXTINF:-1 tvg-id="AmazonSat.br@SD" tvg-name="Amazon Sat" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/3bcd2c447f51.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Amazon Sat (1080p)
 https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8
 #EXTINF:-1 tvg-id="ArarunaTV.br@SD" tvg-name="Araruna TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1e8c61306328.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Araruna TV (720p)
 https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
+#EXTINF:-1 tvg-id="AratuOn.br@SD" tvg-name="Aratu On" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/9cbe2910c429.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",Aratu On (1080p) [não testado]
+https://cdn.live.br1.jmvstream.com/w/LVW-9359/LVW9359_XSyReL0QVf/playlist.m3u8
 #EXTINF:-1 tvg-id="AWTV.br@HD" tvg-name="AWTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/56a27e53e367.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Classic" group-title="Brazil",AWTV (1080p)
 #EXTVLCOPT:http-referrer=https://awtv.com.br
 https://awtv.nuvemplay.live/hls/stream.m3u8
@@ -167,16 +177,22 @@ https://awtv.nuvemplay.live/hls/stream.m3u8
 https://video09.logicahost.com.br/bemmaistv01/bemmaistv01/playlist.m3u8
 #EXTINF:-1 tvg-id="Blitstv.br@SD" tvg-name="Blitstv" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/68090c72fa4b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",Blitstv [testado só em: BR]
 https://stmv1.transmissaodigital.com/blitstv/blitstv/playlist.m3u8
+#EXTINF:-1 tvg-id="BMCNews.br@SD" tvg-name="BM&C News" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/79580b71ef96.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",BM&C News (720p) [não testado]
+https://jmp2.uk/plu-666c9c60a7efd40008f552f0.m3u8
 #EXTINF:-1 tvg-id="BoasNovas.br@SD" tvg-name="Boas Novas" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/397678abf85d.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Boas Novas (1080p) [testado só em: US]
 https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
 #EXTINF:-1 tvg-id="BoxKidsTV.br@SD" tvg-name="Box Kids TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/b132b8a99681.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Kids" group-title="Brazil",Box Kids TV (720p)
 http://170.83.49.66:8083/BOXKIDSHD/index.m3u8
+#EXTINF:-1 tvg-id="CaboFrioTV.br@SD" tvg-name="Cabo Frio TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/abec8dc7975c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",Cabo Frio TV (720p) [não testado]
+https://59f2354c05961.streamlock.net:1443/ararutv/_definst_/ararutv/playlist.m3u8
 #EXTINF:-1 tvg-id="Canal25Jundiai.br@SD" tvg-name="Canal 25 Jundiai" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/cdd5e9f91966.png" tvg-country="BR" tvg-language="Portuguese" group-title="Brazil",Canal 25 Jundiai (404p) [testado só em: US]
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
 #EXTINF:-1 tvg-id="Canal38.br@SD" tvg-name="Canal 38" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/61e32a01dc86.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",Canal 38 (1080p)
 https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8
 #EXTINF:-1 tvg-id="CanaldoBoi.br@SD" tvg-name="Canal do Boi" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/dd12359ee0bb.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Canal do Boi (720p)
 http://170.83.16.50/CANAL_DO_BOI/index.m3u8
+#EXTINF:-1 tvg-id="CanaldoCriador.br@SD" tvg-name="Canal do Criador" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ec16d17e9249.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Outdoor" group-title="Brazil",Canal do Criador (1080p) [não testado]
+https://607d2a1a47b1f.streamlock.net/crur/smil:canaldocriador.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="CanalEducacao.br@SD" tvg-name="Canal Educacao" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6bb541bf65be.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",Canal Educacao (720p)
 https://canaleducacao-stream.ebc.com.br/index.m3u8
 #EXTINF:-1 tvg-id="CanalFDR.br@SD" tvg-name="Canal FDR" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2e8e14622e20.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Canal FDR (1080p) [testado só em: BR]
@@ -185,8 +201,14 @@ https://v-us-01.wisestream.io/memfs/e4ade538-7924-4359-81ef-b9d4dd229e91.m3u8
 http://170.83.16.50/FUTURA/index.m3u8
 #EXTINF:-1 tvg-id="CanalGov.br@SD" tvg-name="Canal Gov" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/e0c3561db9f4.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Legislative" group-title="Brazil",Canal Gov (720p)
 https://canalgov-stream.ebc.com.br/index.m3u8
+#EXTINF:-1 tvg-id="CanalLibras.br@SD" tvg-name="Canal Libras" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2eb16e3385d7.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Canal Libras (720p) [não testado]
+https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8
 #EXTINF:-1 tvg-id="CanalMetropolitanodeNoticias.br@SD" tvg-name="Canal Metropolitano de Noticias" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/3f4f54582371.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",Canal Metropolitano de Noticias
 https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
+#EXTINF:-1 tvg-id="CanalRicos.br@SD" tvg-name="Canal Ricos" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d100c44ed78c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Canal Ricos (480p) [não testado]
+https://5d82644094cc0.streamlock.net/ricostv/ricostv/playlist.m3u8
+#EXTINF:-1 tvg-id="CanalSaude.br@SD" tvg-name="Canal Saude" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/4aeb82706cd9.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",Canal Saude [não testado]
+https://eitv7.cdn.broadpeak.io/account351-i1495/event/canalsaude/format720p.m3u8
 #EXTINF:-1 tvg-id="CanalSete.br@SD" tvg-name="Canal Sete" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/9465d2133705.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Canal Sete (1080p)
 http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 #EXTINF:-1 tvg-id="CanalUOL.br@SD" tvg-name="Canal UOL" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/feb947d0e153.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Canal UOL (1080p)
@@ -197,8 +219,6 @@ https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8
 https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="Catve2.br@SD" tvg-name="Catve2" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/49957173899b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Catve2 (720p)
 https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8
-#EXTINF:-1 tvg-id="CazeTV.br@SD" tvg-name="CazeTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/9b4c451cf5ec.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Sports" group-title="Brazil",CazeTV (1080p) [testado só em: BR]
-http://138.204.86.4:8080/CAZE_TV/playlist.m3u8
 #EXTINF:-1 tvg-id="ChromaTV.br@SD" tvg-name="Chroma TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/725967b8edba.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",Chroma TV (480p)
 https://5c483b9d1019c.streamlock.net/8054/8054/playlist.m3u8
 #EXTINF:-1 tvg-id="CINDIETV.br@HD" tvg-name="CINDIE TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/df4130b040a0.png" tvg-country="BR" tvg-language="English;Portuguese;Spanish" tvg-category="Movies" group-title="Brazil",CINDIE TV (1080p)
@@ -230,6 +250,8 @@ http://170.83.16.50/FISH_TV/index.m3u8
 http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8
 #EXTINF:-1 tvg-id="Futura.br@SD" tvg-name="Futura" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/8386a0c09c07.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",Futura (720p)
 http://170.83.49.66:8083/FUTURAHD/index.m3u8
+#EXTINF:-1 tvg-id="Geekdot.br@SD" tvg-name="Geekdot" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2cb306370bb2.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Animation" group-title="Brazil",Geekdot (720p) [não testado]
+https://stream.ichibantv.com:3764/hybrid/play.m3u8
 #EXTINF:-1 tvg-id="GloboplayNovelas.br@SD" tvg-name="Globoplay Novelas" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/4c48b102350a.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Globoplay Novelas (1080p)
 http://79.127.238.228:14455
 #EXTINF:-1 tvg-id="GospelCartoon.br@SD" tvg-name="Gospel Cartoon" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a88d9fa5b0e5.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Religious" group-title="Brazil",Gospel Cartoon (360p)
@@ -245,10 +267,18 @@ https://igrejamundial.nuvemplay.live/hls/stream.m3u8
 https://stmv1.srvstm.com/sistema7933/sistema7933/playlist.m3u8
 #EXTINF:-1 tvg-id="J3NEWSTV.br@SD" tvg-name="J3NEWS TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ae121ab8565b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",J3NEWS TV
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
+#EXTINF:-1 tvg-id="KpopTVPlay.br@SD" tvg-name="KpopTV Play" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a355fe959fdb.png" tvg-country="BR" tvg-language="Korean;Portuguese" tvg-category="Music" group-title="Brazil",KpopTV Play (576p) [não testado]
+https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
 #EXTINF:-1 tvg-id="Lke.br@SD" tvg-name="L!ke" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/00bc3ae29c0f.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",L!ke (720p)
 https://cnl-cl.otteravision.com/cnl/cl_h265/cl_h265.m3u8
 #EXTINF:-1 tvg-id="LamoreRockShowWebTV.br@SD" tvg-name="Lamore Rock Show WebTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/fb5fea4df268.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Music" group-title="Brazil",Lamore Rock Show WebTV (720p)
 https://a.cdni.live/rodrigo2364/rodrigo2364/playlist.m3u8
+#EXTINF:-1 tvg-name="Mais MasterChef Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/76f196f575ec.png" tvg-country="BR" group-title="Brazil",Mais MasterChef Brasil [não testado]
+https://jmp2.uk/plu-681111be5e0764e297fb200e.m3u8
+#EXTINF:-1 tvg-name="MasterChef Brasil Profissionais" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d93911108e8e.png" tvg-country="BR" group-title="Brazil",MasterChef Brasil Profissionais [não testado]
+https://jmp2.uk/plu-681110afc188aa63faa147e0.m3u8
+#EXTINF:-1 tvg-id="MKKWebTV.br@SD" tvg-name="MKK Web TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/26e243f976b9.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",MKK Web TV (720p) [não testado]
+https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8
 #EXTINF:-1 tvg-id="MusicBoxBrazil.br@SD" tvg-name="Music Box Brazil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/848a7689ea60.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Music" group-title="Brazil",Music Box Brazil (720p)
 http://170.83.49.66:8083/MUSICBOXBRASILHD/index.m3u8
 #EXTINF:-1 tvg-id="MyTimeMovieNetwork.br@SD" tvg-name="MyTime Movie Network" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0bf271bf3180.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Movies" group-title="Brazil",MyTime Movie Network (720p)
@@ -270,6 +300,10 @@ https://cdn.jmvstream.com/w/LVW-9591/LVW9591_PmXtgATnaS/playlist.m3u8
 https://strv.painelvox.top/plenitude/plenitude/playlist.m3u8
 #EXTINF:-1 tvg-id="PrimerTV.br@SD" tvg-name="Primer TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/69570c64465f.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Primer TV (1080p)
 http://200.194.238.229:8383/live/primer/playlist.m3u8
+#EXTINF:-1 tvg-name="RACER Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/16460e02a9c1.png" tvg-country="BR" group-title="Brazil",RACER Brasil (720p) [não testado]
+https://jmp2.uk/plu-65a6818c7bdc8d0008457b21.m3u8
+#EXTINF:-1 tvg-id="RBATV.br@SD" tvg-name="RBATV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d0b92e617289.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",RBATV (720p) [não testado]
+https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8
 #EXTINF:-1 tvg-id="RedeCNTRiodeJaneiro.br@SD" tvg-name="Rede CNT Rio de Janeiro" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/b1c90566f609.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Rede CNT Rio de Janeiro (720p)
 http://170.83.49.66:8083/REDECNTHD/index.m3u8
 #EXTINF:-1 tvg-id="RedeFamilia.br@SD" tvg-name="Rede Familia" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a8130a80e69e.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Rede Familia (720p)
@@ -282,6 +316,8 @@ https://maystreaming.cloudecast.com/redemeio/index.m3u8
 https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8
 #EXTINF:-1 tvg-id="RedeNGT.br@SD" tvg-name="Rede NGT" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/13312077e32d.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",Rede NGT (1080p)
 https://isaocorp.cloudecast.com/ngt/index.m3u8
+#EXTINF:-1 tvg-id="RedeRC.br@SD" tvg-name="Rede RC" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a5485660621c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",Rede RC (720p) [não testado]
+http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8
 #EXTINF:-1 tvg-id="RedeSeculo21.br@SD" tvg-name="Rede Seculo 21" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a908e9067b09.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Religious" group-title="Brazil",Rede Seculo 21 (720p)
 http://186.219.52.187/seculo21/index.m3u8
 #EXTINF:-1 tvg-id="RedeSPTV.br@SD" tvg-name="Rede SPTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d4bebe62d4e3.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Rede SPTV (720p)
@@ -290,8 +326,14 @@ https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8
 https://stmv1.video.brstream.com.br/retrotv/retrotv/chunklist_w1069200121.m3u8
 #EXTINF:-1 tvg-id="RITTV.br@SD" tvg-name="RIT TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f66feacbd505.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Religious" group-title="Brazil",RIT TV (1080p)
 https://acesso.ecast.site:3648/live/ritlive.m3u8
+#EXTINF:-1 tvg-id="SantaCeciliaTV.br@SD" tvg-name="Santa Cecilia TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/55418668ece3.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",Santa Cecilia TV (1080p) [não testado]
+https://5fb29de4928ea.streamlock.net/2063/2063/playlist.m3u8
+#EXTINF:-1 tvg-id="SertaoTV.br@SD" tvg-name="Sertao TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6c8fd5ba7907.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",Sertao TV (720p) [não testado]
+http://wz4.dnip.com.br/sertaotv/sertaotv.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="SESCTV.br@SD" tvg-name="SESC TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ff09d270b7c4.png" tvg-country="BR" tvg-language="Portuguese" group-title="Brazil",SESC TV (720p)
 http://170.83.49.66:8083/SESCTVHD/index.m3u8
+#EXTINF:-1 tvg-id="ShowdoMilhao.br@SD" tvg-name="Show do Milhao" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1cd8a9251c43.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",Show do Milhao (1080p) [não testado]
+https://d38s7rrdbnh4oy.cloudfront.net/v1/master/215c0da80606fed29372070168106400a6ca7e1a/SSAI-Saudades/index.m3u8
 #EXTINF:-1 tvg-id="SICTV.br@SD" tvg-name="SIC TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f83c2002ec8c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",SIC TV (720p)
 https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8
 #EXTINF:-1 tvg-id="SOUTV.br@SD" tvg-name="SOU TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/9081a39ad716.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",SOU TV (1080p)
@@ -302,10 +344,16 @@ https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8
 https://live.tcm10.com.br/tcm10hd/stream.m3u8
 #EXTINF:-1 tvg-id="TerraViva.br@SD" tvg-name="Terra Viva" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/7fb1a6cbc265.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Outdoor" group-title="Brazil",Terra Viva (720p)
 https://9ada494d.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctYnJfVXBseW5rLU5ld2NvX0hMUw/playlist.m3u8
+#EXTINF:-1 tvg-id="TikTokRadioBrasil.br@HD" tvg-name="TikTok Radio Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/cb8d3a2669c2.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Music" group-title="Brazil",TikTok Radio Brasil (1080p) [não testado]
+https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529
 #EXTINF:-1 tvg-id="TimesBrasil.br@SD" tvg-name="Times Brasil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c168f1bece62.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",Times Brasil (720p)
 https://ssai2-ads.api.leiniao.com/global-adinsertion-api/hls/live/v2/21fdb6dd7491406bba86497a24390a25/playlist.m3u8
+#EXTINF:-1 tvg-name="Times Brasil | CNBC" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/26ee7ee86729.png" tvg-country="BR" group-title="Brazil",Times Brasil | CNBC (720p) [não testado]
+https://jmp2.uk/plu-679a973a97782f0008ff4bb6.m3u8
 #EXTINF:-1 tvg-id="TravelBoxBrazil.br@SD" tvg-name="Travel Box Brazil" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/38e7f09b938e.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Travel" group-title="Brazil",Travel Box Brazil (720p)
 http://170.83.49.66:8083/TRAVELBOXHD/index.m3u8
+#EXTINF:-1 tvg-id="TV3Curitiba.br@SD" tvg-name="TV 3 Curitiba" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d672e236849e.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV 3 Curitiba (720p) [não testado]
+https://stmv.webtvninjas.com.br/tv3/tv3/playlist.m3u8
 #EXTINF:-1 tvg-id="TVACritica.br@SD" tvg-name="TV A Critica" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/248ed6b37261.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV A Critica (1080p)
 #EXTVLCOPT:http-referrer=https://cdn.live.br1.jmvstream.com/
 https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8
@@ -317,13 +365,19 @@ https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8
 https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8
 #EXTINF:-1 tvg-id="TVArapuan.br@SD" tvg-name="TV Arapuan" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6fa405fa8323.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Arapuan (1080p) [testado só em: US]
 https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8
+#EXTINF:-1 tvg-id="TVAssembleiaPiaui.br@SD" tvg-name="TV Assembleia Piaui" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1af268c05ac3.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Legislative" group-title="Brazil",TV Assembleia Piaui [não testado]
+https://stmv1.srvstm.com/piaui8071/piaui8071/playlist.m3u8
 #EXTINF:-1 tvg-id="TVBahia.br@HD" tvg-name="TV Bahia" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f0e8f939d1ed.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Bahia (1080i)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
 http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8
+#EXTINF:-1 tvg-id="TVBirigui.br@SD" tvg-name="TV Birigui" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/051aea9929b8.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Birigui (640p) [não testado]
+https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8
 #EXTINF:-1 tvg-id="TVBRICSPortuguese.br@SD" tvg-name="TV BRICS Portuguese" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d6cd843165da.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV BRICS Portuguese (1080p)
 https://porbrics.mediacdn.ru/cdn/brics/portuguese/playlist.m3u8
 #EXTINF:-1 tvg-id="TVBrusque.br@SD" tvg-name="TV Brusque" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/72c237ff65b5.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",TV Brusque (720p) [testado só em: US]
 https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
+#EXTINF:-1 tvg-id="TVCidadedePetropolis.br@SD" tvg-name="TV Cidade de Petropolis" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/841a874b1af4.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Cidade de Petropolis (1080p) [não testado]
+https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8
 #EXTINF:-1 tvg-id="TVCidadeVerdeCuiaba.br@SD" tvg-name="TV Cidade Verde Cuiaba" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/29ce1775e450.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Cidade Verde Cuiaba
 #EXTVLCOPT:http-referrer=https://www.tvcidadeverde.com.br
 https://televisaocidadeverde.brasilstream.com.br/hls/televisaocidadeverde/index.m3u8
@@ -333,24 +387,44 @@ https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8
 https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=
 #EXTINF:-1 tvg-id="TVCuruca.br@SD" tvg-name="TV Curuca" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2d544b2e901d.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",TV Curuca (360p)
 https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8
+#EXTINF:-1 tvg-id="TVdasArtes.br@SD" tvg-name="TV das Artes" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ab7ad0e825a9.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Culture" group-title="Brazil",TV das Artes (360p) [não testado]
+http://tv02.logicahost.com.br:1935/tvdasartes/tvdasartes/playlist.m3u8
+#EXTINF:-1 tvg-id="TVDestak.br@SD" tvg-name="TV Destak" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/52a9cb29011a.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Destak (360p) [não testado]
+https://59f2354c05961.streamlock.net:1443/pascoal/_definst_/pascoal/playlist.m3u8
+#EXTINF:-1 tvg-id="TVDiarioMacapa.br@SD" tvg-name="TV Diario Macapa" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f30aad6db680.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Diario Macapa (1080p) [não testado]
+https://5ad482a77183d.streamlock.net/marliomelohotmail.com/marliomelohotmail.com/playlist.m3u8
 #EXTINF:-1 tvg-id="TVDifusao.br@SD" tvg-name="TV Difusao" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f8bf559c0b95.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Difusao (1080p)
 https://tvdsoultv.acessaradios.com.br/tvdsoultv/tvdsoultv.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="TVDigitalBirigui.br@SD" tvg-name="TV Digital Birigui" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/afec9654c87b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",TV Digital Birigui (640p) [não testado]
+http://wse01.logicahost.com.br:1935/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8
+#EXTINF:-1 tvg-id="TVEmpire.br@SD" tvg-name="TV Empire" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c8a3de54c918.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",TV Empire (720p) [não testado]
+https://5d82644094cc0.streamlock.net/empiremagazinetv/empiremagazinetv/playlist.m3u8
+#EXTINF:-1 tvg-id="TVEncontrodasAguas.br@SD" tvg-name="TV Encontro das Aguas" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/449926aa5ff4.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Encontro das Aguas [não testado]
+https://stmv7.samcast.com.br/sistemaencontrodasaguas/sistemaencontrodasaguas/playlist.m3u8
 #EXTINF:-1 tvg-id="TVEvangelizar.br@SD" tvg-name="TV Evangelizar" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/04bdf1616d90.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Religious" group-title="Brazil",TV Evangelizar (720p)
 http://170.83.16.50/TV_EVANGELIZAR/index.m3u8
 #EXTINF:-1 tvg-id="TVFronteira.br@SD" tvg-name="TV Fronteira" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/bc857a12c7a4.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Fronteira (480i) [testado só em: BR]
 https://tvfronteira.brasilstream.com.br/hls/tvfronteira/index.m3u8
+#EXTINF:-1 tvg-id="TVGideoes.br@SD" tvg-name="TV Gideoes" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/438a129b870b.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Religious" group-title="Brazil",TV Gideoes (1080p) [não testado]
+https://streaming01.zas.media/gideoes/programacao/playlist.m3u8
+#EXTINF:-1 tvg-id="TVGraoPara.br@SD" tvg-name="TV Grao Para" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c524b3abf50f.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Grao Para (720p) [não testado]
+https://video01.kshost.com.br:4443/moises3834/moises3834/playlist.m3u8
 #EXTINF:-1 tvg-id="TVGuara.br@SD" tvg-name="TV Guara" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/16a49a951539.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Guara (1080p)
 https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8
 #EXTINF:-1 tvg-id="TVGuarapari.br@SD" tvg-name="TV Guarapari" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6bccf38dce6f.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Guarapari (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://tvguarapari.com/
 https://video.welltecnologia.com.br/tvguarapari/tvguarapari/playlist.m3u8
+#EXTINF:-1 tvg-id="TVInterlagos.br@SD" tvg-name="TV Interlagos" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/13f6c5a0e6d8.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Interlagos (360p) [não testado]
+https://v8.ciclano.io:1443/tvinterlagos/_definst_/tvinterlagos/playlist.m3u8
 #EXTINF:-1 tvg-id="TVJustica.br@SD" tvg-name="TV Justica" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/bf880e893247.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Justica (720p)
 http://170.83.16.50/TV_JUSTICA/index.m3u8
 #EXTINF:-1 tvg-id="TVLifeAmerica.br@HD" tvg-name="TV Life America" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f87af31d6a57.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Culture" group-title="Brazil",TV Life America (720p)
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
 #EXTINF:-1 tvg-id="TVLitoralRN.br@SD" tvg-name="TV Litoral RN" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6ea586736bb1.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Litoral RN (1080p)
 https://5ad482a77183d.streamlock.net/tvnordesteegmail.com/tvnordesteegmail.com/playlist.m3u8
+#EXTINF:-1 tvg-id="TVMackenzie.br@SD" tvg-name="TV Mackenzie" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1204218b4a60.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Education" group-title="Brazil",TV Mackenzie (480p) [não testado]
+https://player.internetaovivo.com:8443/live_tvmackenzieabr/tvmackenzieabr/playlist.m3u8
 #EXTINF:-1 tvg-id="TVMaisMarica.br@SD" tvg-name="TV Mais Marica" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/78b010c919db.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Mais Marica (1080p)
 https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8
 #EXTINF:-1 tvg-id="TVMarajoara.br@SD" tvg-name="TV Marajoara" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/888d993486e7.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Marajoara (720p)
@@ -371,6 +445,8 @@ http://200.189.113.201/hls/tve.m3u8
 https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="TVPetropolis.br@SD" tvg-name="TV Petropolis" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d694c203e146.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Petropolis (1080p)
 https://video02.logicahost.com.br/tvpetropolis/tvpetropolis/playlist.m3u8
+#EXTINF:-1 tvg-id="TVProfissao.br@SD" tvg-name="TV Profissao" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2ed37a67bd6c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TV Profissao [não testado]
+https://stmv.webtvninjas.com.br/tvprofissao/tvprofissao/playlist.m3u8
 #EXTINF:-1 tvg-id="TVRaTimBum.br@SD" tvg-name="TV Ra Tim Bum" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/71d5ac64f6c0.png" tvg-country="BR" tvg-language="Portuguese" group-title="Brazil",TV Ra Tim Bum (720p)
 http://170.83.49.66:8083/TVRATIMBUMHD/index.m3u8
 #EXTINF:-1 tvg-id="TVSaoRaimundo.br@SD" tvg-name="TV Sao Raimundo" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/e6cd6a8401f2.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TV Sao Raimundo (268p)
@@ -405,6 +481,18 @@ https://video01.logicahost.com.br/tvideonews/tvideonews/playlist.m3u8
 https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8
 #EXTINF:-1 tvg-id="TVLatinaSat.br@HD" tvg-name="TVLatinaSat" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/6795e6793feb.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TVLatinaSat (720p)
 https://www.latinasat.com.br/hls/live/stream/index.m3u8
+#EXTINF:-1 tvg-id="TVMaticComedy.br@SD" tvg-name="TVMatic Comedy" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1d2381fab2ee.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Comedy" group-title="Brazil",TVMatic Comedy (720p) [não testado]
+http://cdn.tvmatic.net/comedy.m3u8
+#EXTINF:-1 tvg-id="TVMaticCrafts.br@SD" tvg-name="TVMatic Crafts" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/d6f3fc57f99c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TVMatic Crafts (720p) [não testado]
+http://cdn.tvmatic.net/crafts.m3u8
+#EXTINF:-1 tvg-id="TVMaticFacebook.br@SD" tvg-name="TVMatic Facebook" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/4c5861d0446e.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TVMatic Facebook (720p) [não testado]
+http://cdn.tvmatic.net/facebook.m3u8
+#EXTINF:-1 tvg-id="TVMaticFight.br@SD" tvg-name="TVMatic Fight" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/94e24fda11e9.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Sports" group-title="Brazil",TVMatic Fight (720p) [não testado]
+http://cdn.tvmatic.net/fight.m3u8
+#EXTINF:-1 tvg-id="TVMaticFunny.br@SD" tvg-name="TVMatic Funny" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/7bdddbdcbcab.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TVMatic Funny (720p) [não testado]
+http://cdn.tvmatic.net/funny.m3u8
+#EXTINF:-1 tvg-id="TVMaticTikTok.br@SD" tvg-name="TVMatic TikTok" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/fa919c79d765.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Other" group-title="Brazil",TVMatic TikTok (720p) [não testado]
+http://cdn.tvmatic.net/tiktok.m3u8
 #EXTINF:-1 tvg-id="TVNBN.br@SD" tvg-name="TVNBN" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0d38809d8a27.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="General" group-title="Brazil",TVNBN (1080p)
 #EXTVLCOPT:http-user-agent=VLC/3.0.20 LibVLC/3.0.20
 https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8
@@ -414,6 +502,8 @@ https://umatv.nuvemplay.live/hls/stream.m3u8
 https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=
 #EXTINF:-1 tvg-id="VEJAPlusTV.br@HD" tvg-name="VEJA+ TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/dd90495c478c.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="News" group-title="Brazil",VEJA+ TV (1080p)
 https://gpa-vja.otteravision.com/gpa/vja/vja.m3u8
+#EXTINF:-1 tvg-id="VRTChannel.br@SD" tvg-name="VRT Channel" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/8122dda21b10.png" tvg-country="BR" tvg-language="Portuguese" tvg-category="Entertainment" group-title="Brazil",VRT Channel (720p) [não testado]
+https://sistemavrt.vrtchannel.tv.br:3473/stream/play.m3u8
 #EXTINF:-1 tvg-id="DunyaNawTV.af@SD" tvg-name="Dunya Naw TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/7d4bf06f2e4f.png" tvg-country="AF" tvg-language="Dari (Parsi)" tvg-category="General" group-title="Afghanistan",Dunya Naw TV (576p)
 https://dunyanhls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="EslahTV.af@SD" tvg-name="Eslah TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/e7c173b7c452.png" tvg-country="AF" tvg-language="Pashto" tvg-category="Religious" group-title="Afghanistan",Eslah TV (720p)
@@ -793,7 +883,7 @@ http://stream.mcquack.net/123/index.m3u8
 #EXTINF:-1 tvg-id="ATV.am@SD" tvg-name="ATV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/4af36e5a8065.png" tvg-country="AM" tvg-language="Armenian" tvg-category="General" group-title="Armenia",ATV (1080p) [testado só em: BR]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 http://stream.mcquack.net/36/index.m3u8
-#EXTINF:-1 tvg-id="FastSports.am@SD" tvg-name="Fast Sports" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/55b0bd2dcc9b.png" tvg-country="AM" tvg-language="Armenian" tvg-category="Sports" group-title="Armenia",Fast Sports (1080p)
+#EXTINF:-1 tvg-name="Fast Sports" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/55b0bd2dcc9b.png" tvg-country="AM" tvg-language="Armenian" tvg-category="Sports" group-title="Armenia",Fast Sports (1080p)
 http://s7.merlive.am/Fastsports/index.m3u8
 #EXTINF:-1 tvg-id="FirstChannelNews.am@SD" tvg-name="First Channel News" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/ecc22476a2ed.png" tvg-country="AM" tvg-language="Armenian" tvg-category="News" group-title="Armenia",First Channel News (1080p)
 https://amtvusdvr.tulix.tv/am3abr/index.m3u8
@@ -1801,7 +1891,7 @@ https://v2.tustreaming.cl/fmplus/index.m3u8
 https://multimedia.fortalezatv.cl/video/video.m3u8
 #EXTINF:-1 tvg-id="Frecuencia7TV.cl@SD" tvg-name="Frecuencia 7 TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/cad416276a08.png" tvg-country="CL" tvg-language="Spanish" tvg-category="General" group-title="Chile",Frecuencia 7 TV (720p)
 https://v2.tustreaming.cl/frecuencia7/index.m3u8
-#EXTINF:-1 tvg-id="FunBox.cl@SD" tvg-name="FunBox" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0d9d0144c799.png" tvg-country="CL" tvg-language="Spanish" tvg-category="Kids" group-title="Chile",FunBox
+#EXTINF:-1 tvg-id="PlimPlim.ar@SD" tvg-name="FunBox" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0d9d0144c799.png" tvg-country="CL" tvg-language="Spanish" tvg-category="Kids" group-title="Chile",FunBox
 http://186.148.196.100:8000/play/a00d
 #EXTINF:-1 tvg-id="GenialTV.cl@SD" tvg-name="Genial TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/5b64c3844f4c.png" tvg-country="CL" tvg-language="Spanish" tvg-category="Music" group-title="Chile",Genial TV (720p) [testado só em: US]
 https://v1.tustreaming.cl/genialtv/index.m3u8
@@ -4385,7 +4475,7 @@ https://livestream.mediacci.com/ccitv/index.m3u8
 https://s.emisoras.tv:8081/cholutecatv/index.m3u8
 #EXTINF:-1 tvg-id="CHTV.hn@SD" tvg-name="CHTV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/a5f9efef705f.png" tvg-country="HN" tvg-language="Spanish" tvg-category="General" group-title="Honduras",CHTV (1080p)
 https://viewhn.com/chtv/live/playlist.m3u8
-#EXTINF:-1 tvg-id="DeportesTVC.hn@SD" tvg-name="Deportes TVC" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0161e2403f7a.png" tvg-country="HN" tvg-language="Spanish" tvg-category="Sports" group-title="Honduras",Deportes TVC (720p)
+#EXTINF:-1 tvg-name="Deportes TVC" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0161e2403f7a.png" tvg-country="HN" tvg-language="Spanish" tvg-category="Sports" group-title="Honduras",Deportes TVC (720p)
 https://streaming.onnethn.com/DEPORTES_TVC/playlist.m3u8
 #EXTINF:-1 tvg-id="DiosTeVe.hn@SD" tvg-name="Dios Te Ve" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/2d95134c1a74.png" tvg-country="HN" tvg-language="Spanish" tvg-category="Religious" group-title="Honduras",Dios Te Ve (1080p)
 https://s.emisoras.tv:8081/diostevetv/index.m3u8
@@ -4953,7 +5043,7 @@ https://mumt05.tangotv.in/87NeALx2BHAKTISAGAR/index.m3u8
 https://live.ekamraott.com/4tv/bharata2z/index.m3u8
 #EXTINF:-1 tvg-id="BharatExpress.in@SD" tvg-name="Bharat Express" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0e54afe3a6e2.png" tvg-country="IN" tvg-language="Urdu;English" tvg-category="News" group-title="India",Bharat Express (1080p)
 https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/e029a22c-cbd9-493b-9b37-e7f0cabe78cc/index.m3u8
-#EXTINF:-1 tvg-id="BharatSamachar.in@SD" tvg-name="Bharat Samachar" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c73b7ebb878d.png" tvg-country="IN" tvg-language="Hindi" tvg-category="News" group-title="India",Bharat Samachar (576p)
+#EXTINF:-1 tvg-name="Bharat Samachar" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c73b7ebb878d.png" tvg-country="IN" tvg-language="Hindi" tvg-category="News" group-title="India",Bharat Samachar (576p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
 https://fta.ektv.in/live/97/97_0.m3u8
 #EXTINF:-1 tvg-id="Bharat24.in@SD" tvg-name="Bharat24" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/10e78c230144.png" tvg-country="IN" tvg-language="Hindi" tvg-category="News" group-title="India",Bharat24 (1080p)
@@ -6764,7 +6854,7 @@ https://5f204aff97bee.streamlock.net/AltoAdigeTV/livestream/playlist.m3u8
 https://stream9.xdevel.com/video0s976364-1176/stream/playlist.m3u8
 #EXTINF:-1 tvg-id="Antenna2TV.it@SD" tvg-name="Antenna 2 TV" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/e54249cfa7cf.png" tvg-country="IT" tvg-language="Italian" tvg-category="General" group-title="Italy",Antenna 2 TV (720p)
 https://58f12ffd2447a.streamlock.net/Antenna2/livestream/playlist.m3u8
-#EXTINF:-1 tvg-name="Antenna Sicilia" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/aecf92523eda.png" tvg-country="IT" group-title="Italy",Antenna Sicilia (900p)
+#EXTINF:-1 tvg-id="AntennaSicilia.it@SD" tvg-name="Antenna Sicilia" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/aecf92523eda.png" tvg-country="IT" group-title="Italy",Antenna Sicilia (900p)
 https://antennasicilialive.cdn.netrw.it/antennasicilialive/hls/ccr/antennasicilia/master.m3u8
 #EXTINF:-1 tvg-name="Antenna Sud" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/70dae36bc5a7.png" tvg-country="IT" group-title="Italy",Antenna Sud (1080p)
 https://live-antennasud.cdn.netrw.it/antennasud/hls/ccr/antennasud/master.m3u8
@@ -8287,11 +8377,11 @@ https://cdn4.skygo.mn/live/disk1/Dreambox/HLSv3-FTA/Dreambox.m3u8
 #EXTINF:-1 tvg-id="MNPlus.mn@SD" tvg-name="MN+" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/0e29d7b5d0bf.png" tvg-country="MN" tvg-language="Mongolian" tvg-category="Movies" group-title="Mongolia",MN+ (720p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
 https://cdn4.skygo.mn/live/disk1/MNplus91/HLSv3-FTA/MNplus91.m3u8
-#EXTINF:-1 tvg-id="TVCGMNE.me@SD" tvg-name="TVCG MNE" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/58e726f00492.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TVCG MNE (1080p)
+#EXTINF:-1 tvg-id="TVCGMNE.me@HD" tvg-name="TVCG MNE" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/58e726f00492.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TVCG MNE (1080p)
 https://rtcg-live-open.morescreens.com/RTCG_1_004/playlist.m3u8
-#EXTINF:-1 tvg-id="TVNiksic.me@SD" tvg-name="TV Niksic" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/62d217da764f.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TV Niksic (720p)
+#EXTINF:-1 tvg-id="TVNiksic.me@HD" tvg-name="TV Niksic" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/62d217da764f.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TV Niksic (720p)
 https://tv.rtv-niksic.me/hls/stream.m3u8
-#EXTINF:-1 tvg-id="TVTeuta.me@SD" tvg-name="TV Teuta" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/12b7b6788439.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TV Teuta
+#EXTINF:-1 tvg-id="TVTeuta.me@HD" tvg-name="TV Teuta" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/12b7b6788439.png" tvg-country="ME" tvg-category="General" group-title="Montenegro",TV Teuta
 http://143.244.204.5/tvteuta/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="2M.ma@SD" tvg-name="2M" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/90a5814d8e13.png" tvg-country="MA" tvg-language="Arabic" tvg-category="General" group-title="Morocco",2M (576p)
 http://185.9.2.18/chid_218/index.m3u8
@@ -13040,11 +13130,11 @@ https://hlspackager.akamaized.net/live/DB/IRAN_INTERNATIONAL/HLS/IRAN_INTERNATIO
 https://iranefardalive.com/stream/live.m3u8
 #EXTINF:-1 tvg-name="ITV 1" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/88fac95bfc6b.png" tvg-country="GB" tvg-category="Uk" group-title="United Kingdom",ITV 1 [não testado]
 http://45.14.84.37/itv1/index.m3u8
-#EXTINF:-1 tvg-id="ITV2.uk@SD" tvg-name="ITV2" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f2f0957c8d4e.png" tvg-country="GB" tvg-language="English" tvg-category="General" group-title="United Kingdom",ITV2 (360p) [não testado]
+#EXTINF:-1 tvg-name="ITV2" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/f2f0957c8d4e.png" tvg-country="GB" tvg-language="English" tvg-category="General" group-title="United Kingdom",ITV2 (360p) [não testado]
 https://lb.iptvnetwork.net/ls28/10106/playlist.m3u8
-#EXTINF:-1 tvg-id="ITV3.uk@SD" tvg-name="ITV3" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c1be4d1eac7c.png" tvg-country="GB" tvg-language="English" tvg-category="Entertainment" group-title="United Kingdom",ITV3 (360p) [não testado]
+#EXTINF:-1 tvg-name="ITV3" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/c1be4d1eac7c.png" tvg-country="GB" tvg-language="English" tvg-category="Entertainment" group-title="United Kingdom",ITV3 (360p) [não testado]
 https://lb.iptvnetwork.net/ls28/10107/playlist.m3u8
-#EXTINF:-1 tvg-id="ITV4.uk@SD" tvg-name="ITV4" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/49da464aca1b.png" tvg-country="GB" tvg-language="English" tvg-category="General" group-title="United Kingdom",ITV4 (360p) [não testado]
+#EXTINF:-1 tvg-name="ITV4" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/49da464aca1b.png" tvg-country="GB" tvg-language="English" tvg-category="General" group-title="United Kingdom",ITV4 (360p) [não testado]
 https://lb.iptvnetwork.net/ls28/10108/playlist.m3u8
 #EXTINF:-1 tvg-id="JimJamEurope.uk@SD" tvg-name="JimJam Europe" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/1cb21fa9cd1b.png" tvg-country="GB" tvg-language="English;Portuguese;Czech;Slovak;Hebrew" tvg-category="Kids" group-title="United Kingdom",JimJam Europe (1080p) [testado só em: US]
 http://212.5.144.156:8080/jimjam/index.m3u8
@@ -13438,7 +13528,7 @@ https://a-cdn.klowdtv.com/live1/awe_720p/playlist.m3u8
 https://a-cdn.klowdtv.com/live1/aweint/playlist.m3u8
 #EXTINF:-1 tvg-id="AWEPlus.us@SD" tvg-name="AWE Plus" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/4774df7ae82a.png" tvg-country="US" tvg-language="English" tvg-category="General" group-title="United States",AWE Plus (1080p)
 https://a-cdn.herringnetwork.com/affiliate/awee/playlist.m3u8
-#EXTINF:-1 tvg-id="AXNAdria.us@SD" tvg-name="AXN Adria" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/de2aad8658d8.png" tvg-country="US" tvg-language="English" tvg-category="Movies" group-title="United States",AXN Adria
+#EXTINF:-1 tvg-name="AXN Adria" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/de2aad8658d8.png" tvg-country="US" tvg-language="English" tvg-category="Movies" group-title="United States",AXN Adria
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3
 http://5.57.74.130:8000/play/a0at/index.m3u8
 #EXTINF:-1 tvg-id="AXNCrime.us@SD" tvg-name="AXN Crime" tvg-logo="https://raw.githubusercontent.com/adailtononline-cmd/iptv/main/logos/b8b7d2fa548e.png" tvg-country="US" tvg-language="English" tvg-category="Movies" group-title="United States",AXN Crime
